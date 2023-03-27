@@ -11,5 +11,6 @@
   <p><%= portfolio_item.body%></p>
   <%= image_tag portfolio_item.thumb_image%>
   <%= link_to "Edit", edit_portfolio_path(portfolio_item) %>
+  <%= button_to "Delete Portfolio Item", portfolio_path(portfolio_item), method: :delete %>
 
 <% end %>
