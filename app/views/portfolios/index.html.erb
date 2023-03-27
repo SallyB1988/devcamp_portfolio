@@ -6,7 +6,7 @@
 
 <%# The next section is embedded ruby (which is what erb stand for) %>
 <% @portfolio_items.each do |portfolio_item| %>
-  <p><%= link_to portfolio_item.title, portfolio_path(portfolio_item)%></p>
+  <p><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item)%></p>
   <p><%= portfolio_item.subtitle%></p>
   <p><%= portfolio_item.body%></p>
   <%= image_tag portfolio_item.thumb_image%>
