@@ -1,8 +1,13 @@
 <div id="<%= dom_id blog %>">
+<div>
   <p>
     <strong>Title:</strong>
     <%= blog.title %>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>Status:</strong>
+    <%= link_to blog.status, toggle_status_blog_path(blog) %>
   </p>
+</div>
 
   <p>
     <strong>Body:</strong>
