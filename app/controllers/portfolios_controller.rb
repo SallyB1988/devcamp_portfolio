@@ -8,6 +8,10 @@ class PortfoliosController < ApplicationController
     @angular_portfolio_items = Portfolio.angular
   end
 
+  def ruby_on_rails
+    @ruby_on_rails_portfolio_items = Portfolio.ruby_on_rails_portfolio_items
+  end
+
   def show
     @portfolio_item = Portfolio.find(params[:id])
   end
