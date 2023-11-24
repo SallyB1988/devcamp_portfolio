@@ -3,6 +3,14 @@ class PortfoliosController < ApplicationController
   def index
     @portfolio_items = Portfolio.all
   end
+  
+  def angular
+    @angular_portfolio_items = Portfolio.angular
+  end
+
+  def ruby_on_rails
+    @ruby_on_rails_portfolio_items = Portfolio.ruby_on_rails_portfolio_items
+  end
 
   def show
     @portfolio_item = Portfolio.find(params[:id])
@@ -10,6 +18,7 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build}
   end
 
   def edit
@@ -55,7 +64,7 @@ class PortfoliosController < ApplicationController
 
   private
   def portfolio_params
-    params.require(:portfolio).permit(:title, :subtitle, :body, :main_image, :thumb_image)
+    params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
   end
 
 end

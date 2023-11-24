@@ -2,7 +2,7 @@
 <div>
   <p>
     <strong>Title:</strong>
-    <%= blog.title %>
+    <%= blog.title.upcase %>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <strong>Status:</strong>
     <%= link_to blog.status, toggle_status_blog_path(blog) %>
